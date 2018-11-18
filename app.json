@@ -1,0 +1,43 @@
+{
+  "pages": [
+    "page/classic/classic",
+    "page/book/book",
+    "page/my/my",
+    "page/book-detail/book-detail"
+  ],
+  "window": {
+    "navigationBarTitleText": "亦客快活",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "c7c7c7",
+    "selectedColor": "#000000",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "page/classic/classic",
+        "text": "流行",
+        "iconPath": "images/tab/classic@highlight.png",
+        "selectedIconPath": "images/tab/classic.png"
+      },
+      {
+        "pagePath": "page/book/book",
+        "text": "书籍",
+        "iconPath": "images/tab/book@highlight.png",
+        "selectedIconPath": "images/tab/book.png"
+      },
+      {
+        "pagePath": "page/my/my",
+        "iconPath": "images/tab/my@highlight.png",
+        "text": "我的",
+        "selectedIconPath": "images/tab/my.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "require": 10000,
+    "downloadFiles": 10000
+  },
+  "debug": true
+}

@@ -1,0 +1,26 @@
+<view class='container'>
+<view class='header'>
+<epsoide-cmp class="epsoide" index='{{classicData.index}}'></epsoide-cmp>
+<like-cmp class="like" bind:like="onLike" like="{{likeStatus}}" count="{{likeCount}}"></like-cmp>
+</view>
+<!-- 利用hidden 来显示隐藏组件  切记 wx:if 重新渲染组件，-->
+<movie-cmp image="{{classicData.image}}" 
+           content="{{classicData.content}}" hidden='{{classicData.type!==100}}'>
+</movie-cmp>
+
+<!-- 因为hidden 不带attached detached等组件声明周期函数 所以music组件使用wx:if 渲染 -->
+<!-- <music-cmp image="{{classicData.image}}" src="{{classicData.url}}"
+           content="{{classicData.content}}" hidden='{{classicData.type!==200}}'>
+</music-cmp> -->
+
+<music-cmp image="{{classicData.image}}" src="{{classicData.url}}" 
+           content="{{classicData.content}}" wx:if='{{classicData.type==200}}'>
+</music-cmp>
+<essay-cmp image="{{classicData.image}}" 
+           content="{{classicData.content}}" hidden='{{classicData.type!==300}}'>
+</essay-cmp>
+<nav-cmp class='nav' first='{{first}}' latest='{{latest}}' 
+         title='{{classicData.title}}' bind:left='onNext' 
+         bind:right='onPrevious'>
+</nav-cmp>
+</view>

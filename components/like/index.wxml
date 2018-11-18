@@ -1,0 +1,7 @@
+<!--components/like/index.wxml-->
+<!-- bind:tap 绑定点击事件 : 可以取消但是强烈建议保留 ，其次可以用catch 代替bind ，但是catch 会
+取消事件冒泡行为，大部分事件都是冒泡事件 -->
+<view bind:tap='onLike' class="container">
+  <image src="{{like?yesSrc:noSrc}}" />
+  <text>{{count}}</text>
+</view>

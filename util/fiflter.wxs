@@ -1,0 +1,21 @@
+var format = function (text) {
+    if (!text) {
+        return
+    }
+    var reg = getRegExp("\\\\n", "g")
+    text = text.replace(reg, "\n&nbsp;&nbsp;&nbsp;&nbsp;")
+    return text
+}
+
+var limit = function (array, length) {
+    return array.slice(0, length)
+}
+
+var change = function (index) {
+    return index == 0 ? 'ex-tag1' : '' || index == 1 ? 'ex-tag2' : ''
+}
+module.exports = {
+    format: format,
+    limit: limit,
+    change: change
+}

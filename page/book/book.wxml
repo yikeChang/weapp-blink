@@ -1,0 +1,20 @@
+<view class="container" wx:if='{{!searching}}'>
+    <view class="header">
+        <view class="box" bind:tap='onSearching'>
+            <image src='/images/icon/search.png' ></image>
+            <text>搜索书籍</text>
+        </view>
+    </view>
+    <view class="sub-container">
+        <image class='head-img' src='/images/book/quality.png'></image>
+        <view class="book-container">
+            <block wx:for="{{books}}" wx:for-item='items' wx:key='id'>
+            <!-- wx:key 提高性能，若遍历对象，值为不重复的数字或字符串，
+            这里面使用items里面的id来作为key值,如果遍历是数字和字符串 直接用*this代替 -->
+                <book-cmp book='{{items}}'></book-cmp>
+            </block>
+        </view>
+    </view>
+</view>
+
+<search-cmp cMore="{{fMore}}" wx:if='{{searching}}' bind:cancel='onCancel' ></search-cmp>

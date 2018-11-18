@@ -1,0 +1,24 @@
+/* components/like/index.wxss */
+
+
+/* 给组件定宽，如果数字特别多，会使得里面的元素变形，如果用inline-flex 会有页面跳动问题，选择合适的 */
+.container {
+    display: inline-flex;
+    flex-direction: row;
+    padding: 10rpx;
+    align-items: center;
+}
+/* 注意 选择器 以下的写法无法进行复用 */
+.container image {
+    width: 32rpx;
+    height: 28rpx;
+}
+.container text {
+    /* 注意 字体默认 会有上下的空白区域 设置line-height 和font-size 大小一样 消除间隙 */
+    font-size: 24rpx;
+    line-height: 24rpx;
+    color: #140202;
+    position: relative;
+    left: 6rpx;
+    bottom: 10rpx;
+}
